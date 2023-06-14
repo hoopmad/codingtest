@@ -40,12 +40,7 @@ def solution(number, limit, power):
                 count+=2
         factor_count.append(count)
 
-    num_list = []
-    for i in range(len(factor_count)):
-        if(factor_count[i]>limit):
-            num_list.append(power)
-        else:
-            num_list.append(factor_count[i])
+    num_list = [i if i<=limit else power for i in factor_count]
 
     return sum(num_list)
 
